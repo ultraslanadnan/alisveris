@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8944C715-C3C8-4592-A9E3-F2D36FFF04BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\custom.css" />
+    <Content Include="ErkekCocuk.aspx" />
+    <Content Include="ErkekGiyim.aspx" />
+    <Content Include="giris.aspx" />
+    <Content Include="images\sprite.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\customjs.js" />
+    <Content Include="KadınGiyim.aspx" />
+    <Content Include="kayıt.aspx" />
+    <Content Include="css\kayıt.css" />
+    <Content Include="KızCocuk.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="index.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\price-range.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\404\hata.jpg" />
+    <Content Include="images\anasayfa\bg_border.png" />
+    <Content Include="images\anasayfa\gallery1.jpg" />
+    <Content Include="images\anasayfa\gallery2.jpg" />
+    <Content Include="images\anasayfa\gallery3.jpg" />
+    <Content Include="images\anasayfa\gallery4.jpg" />
+    <Content Include="images\anasayfa\iframe1.png" />
+    <Content Include="images\anasayfa\iframe2.png" />
+    <Content Include="images\anasayfa\iframe3.png" />
+    <Content Include="images\anasayfa\iframe4.png" />
+    <Content Include="images\anasayfa\kargo.png" />
+    <Content Include="images\anasayfa\kız1.jpg" />
+    <Content Include="images\anasayfa\kız11.jpg" />
+    <Content Include="images\anasayfa\kız2.jpg" />
+    <Content Include="images\anasayfa\kız22.jpg" />
+    <Content Include="images\anasayfa\kız3.jpg" />
+    <Content Include="images\anasayfa\kız33.jpg" />
+    <Content Include="images\anasayfa\logo.png" />
+    <Content Include="images\anasayfa\map.png" />
+    <Content Include="images\anasayfa\new.png" />
+    <Content Include="images\anasayfa\partner1.png" />
+    <Content Include="images\anasayfa\partner2.png" />
+    <Content Include="images\anasayfa\partner3.png" />
+    <Content Include="images\anasayfa\partner4.png" />
+    <Content Include="images\anasayfa\product1.jpg" />
+    <Content Include="images\anasayfa\product2.jpg" />
+    <Content Include="images\anasayfa\product3.jpg" />
+    <Content Include="images\anasayfa\product4.jpg" />
+    <Content Include="images\anasayfa\product5.jpg" />
+    <Content Include="images\anasayfa\product6.jpg" />
+    <Content Include="images\anasayfa\recommend1.jpg" />
+    <Content Include="images\anasayfa\recommend2.jpg" />
+    <Content Include="images\anasayfa\recommend3.jpg" />
+    <Content Include="images\anasayfa\sale.png" />
+    <Content Include="images\anasayfa\searchicon.png" />
+    <Content Include="images\CocukGiyim\ErkekCocuk1.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk2.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk25.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk26.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk27.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk28.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk3.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk4.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk5.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk6.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk7.jpg" />
+    <Content Include="images\CocukGiyim\ErkekCocuk8.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk10.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk11.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk12.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk13.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk14.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk15.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk16.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk17.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk18.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk19.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk20.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk21.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk22.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk23.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk24.jpg" />
+    <Content Include="images\CocukGiyim\KizCocuk9.jpg" />
+    <Content Include="images\sepet\bir.png" />
+    <Content Include="images\sepet\iki.png" />
+    <Content Include="images\sepet\uc.png" />
+    <Content Include="images\urundetayi\2.jpg" />
+    <Content Include="images\urundetayi\3.jpg" />
+    <Content Include="images\urundetayi\4.jpg" />
+    <Content Include="images\urundetayi\5.jpg" />
+    <Content Include="images\urundetayi\paylasim.png" />
+    <Content Include="images\urundetayi\yeni.jpg" />
+    <Content Include="images\urundetayi\yildiz.png" />
+    <Content Include="images\urunler\reklam.png" />
+    <Content Include="images\urunler\urun1.png" />
+    <Content Include="images\urunler\urun10.png" />
+    <Content Include="images\urunler\urun100.png" />
+    <Content Include="images\urunler\urun101.png" />
+    <Content Include="images\urunler\urun102.png" />
+    <Content Include="images\urunler\urun103.png" />
+    <Content Include="images\urunler\urun104.png" />
+    <Content Include="images\urunler\urun105.png" />
+    <Content Include="images\urunler\urun106.png" />
+    <Content Include="images\urunler\urun107.png" />
+    <Content Include="images\urunler\urun108.png" />
+    <Content Include="images\urunler\urun109.png" />
+    <Content Include="images\urunler\urun11.png" />
+    <Content Include="images\urunler\urun110.png" />
+    <Content Include="images\urunler\urun111.png" />
+    <Content Include="images\urunler\urun112.png" />
+    <Content Include="images\urunler\urun113.png" />
+    <Content Include="images\urunler\urun114.png" />
+    <Content Include="images\urunler\urun115.png" />
+    <Content Include="images\urunler\urun116.png" />
+    <Content Include="images\urunler\urun117.png" />
+    <Content Include="images\urunler\urun118.png" />
+    <Content Include="images\urunler\urun119.png" />
+    <Content Include="images\urunler\urun12.png" />
+    <Content Include="images\urunler\urun120.png" />
+    <Content Include="images\urunler\urun121.png" />
+    <Content Include="images\urunler\urun122.png" />
+    <Content Include="images\urunler\urun123.png" />
+    <Content Include="images\urunler\urun124.png" />
+    <Content Include="images\urunler\urun125.png" />
+    <Content Include="images\urunler\urun126.png" />
+    <Content Include="images\urunler\urun13.png" />
+    <Content Include="images\urunler\urun14.png" />
+    <Content Include="images\urunler\urun15.png" />
+    <Content Include="images\urunler\urun16.png" />
+    <Content Include="images\urunler\urun17.png" />
+    <Content Include="images\urunler\urun18.png" />
+    <Content Include="images\urunler\urun19.png" />
+    <Content Include="images\urunler\urun2.png" />
+    <Content Include="images\urunler\urun20.png" />
+    <Content Include="images\urunler\urun21.png" />
+    <Content Include="images\urunler\urun22.png" />
+    <Content Include="images\urunler\urun23.png" />
+    <Content Include="images\urunler\urun24.png" />
+    <Content Include="images\urunler\urun25.png" />
+    <Content Include="images\urunler\urun26.png" />
+    <Content Include="images\urunler\urun27.png" />
+    <Content Include="images\urunler\urun28.png" />
+    <Content Include="images\urunler\urun29.png" />
+    <Content Include="images\urunler\urun3.png" />
+    <Content Include="images\urunler\urun30.png" />
+    <Content Include="images\urunler\urun31.png" />
+    <Content Include="images\urunler\urun32.png" />
+    <Content Include="images\urunler\urun33.png" />
+    <Content Include="images\urunler\urun34.png" />
+    <Content Include="images\urunler\urun35.png" />
+    <Content Include="images\urunler\urun36.png" />
+    <Content Include="images\urunler\urun37.png" />
+    <Content Include="images\urunler\urun38.png" />
+    <Content Include="images\urunler\urun39.png" />
+    <Content Include="images\urunler\urun4.png" />
+    <Content Include="images\urunler\urun40.png" />
+    <Content Include="images\urunler\urun41.png" />
+    <Content Include="images\urunler\urun42.png" />
+    <Content Include="images\urunler\urun43.png" />
+    <Content Include="images\urunler\urun44.png" />
+    <Content Include="images\urunler\urun45.png" />
+    <Content Include="images\urunler\urun46.png" />
+    <Content Include="images\urunler\urun47.png" />
+    <Content Include="images\urunler\urun48.png" />
+    <Content Include="images\urunler\urun49.png" />
+    <Content Include="images\urunler\urun5.png" />
+    <Content Include="images\urunler\urun50.png" />
+    <Content Include="images\urunler\urun51.png" />
+    <Content Include="images\urunler\urun52.png" />
+    <Content Include="images\urunler\urun53.png" />
+    <Content Include="images\urunler\urun54.png" />
+    <Content Include="images\urunler\urun55.png" />
+    <Content Include="images\urunler\urun56.png" />
+    <Content Include="images\urunler\urun57.png" />
+    <Content Include="images\urunler\urun58.png" />
+    <Content Include="images\urunler\urun59.png" />
+    <Content Include="images\urunler\urun6.png" />
+    <Content Include="images\urunler\urun60.png" />
+    <Content Include="images\urunler\urun61.png" />
+    <Content Include="images\urunler\urun62.png" />
+    <Content Include="images\urunler\urun63.png" />
+    <Content Include="images\urunler\urun64.png" />
+    <Content Include="images\urunler\urun65.png" />
+    <Content Include="images\urunler\urun66.png" />
+    <Content Include="images\urunler\urun67.png" />
+    <Content Include="images\urunler\urun68.png" />
+    <Content Include="images\urunler\urun69.png" />
+    <Content Include="images\urunler\urun7.png" />
+    <Content Include="images\urunler\urun70.png" />
+    <Content Include="images\urunler\urun71.png" />
+    <Content Include="images\urunler\urun72.png" />
+    <Content Include="images\urunler\urun73.png" />
+    <Content Include="images\urunler\urun74.png" />
+    <Content Include="images\urunler\urun75.png" />
+    <Content Include="images\urunler\urun76.png" />
+    <Content Include="images\urunler\urun77.png" />
+    <Content Include="images\urunler\urun78.png" />
+    <Content Include="images\urunler\urun79.png" />
+    <Content Include="images\urunler\urun8.png" />
+    <Content Include="images\urunler\urun80.png" />
+    <Content Include="images\urunler\urun81.png" />
+    <Content Include="images\urunler\urun82.png" />
+    <Content Include="images\urunler\urun83.png" />
+    <Content Include="images\urunler\urun84.png" />
+    <Content Include="images\urunler\urun85.png" />
+    <Content Include="images\urunler\urun86.png" />
+    <Content Include="images\urunler\urun87.png" />
+    <Content Include="images\urunler\urun88.png" />
+    <Content Include="images\urunler\urun89.png" />
+    <Content Include="images\urunler\urun9.png" />
+    <Content Include="images\urunler\urun90.png" />
+    <Content Include="images\urunler\urun91.png" />
+    <Content Include="images\urunler\urun92.png" />
+    <Content Include="images\urunler\urun93.png" />
+    <Content Include="images\urunler\urun94.png" />
+    <Content Include="images\urunler\urun95.png" />
+    <Content Include="images\urunler\urun96.png" />
+    <Content Include="images\urunler\urun97.png" />
+    <Content Include="images\urunler\urun98.png" />
+    <Content Include="images\urunler\urun99.png" />
+    <Content Include="images\YeniSezonErkek\Erkek1.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek10.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek11.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek12.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek13.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek14.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek15.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek16.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek17.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek18.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek19.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek2.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek20.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek3.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek4.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek5.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek6.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek7.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek8.jpg" />
+    <Content Include="images\YeniSezonErkek\Erkek9.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin1.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin10.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin11.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin12.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin2.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin3.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin4.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin5.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin6.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin7.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin8.jpg" />
+    <Content Include="images\YeniSezonKadin\Kadin9.jpg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\contact.js" />
+    <Content Include="js\gmaps.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\jquery.scrollUp.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\price-range.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="sepet.aspx" />
+    <Content Include="urun_detayi.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ErkekCocuk.aspx.cs">
+      <DependentUpon>ErkekCocuk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErkekCocuk.aspx.designer.cs">
+      <DependentUpon>ErkekCocuk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErkekGiyim.aspx.cs">
+      <DependentUpon>ErkekGiyim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErkekGiyim.aspx.designer.cs">
+      <DependentUpon>ErkekGiyim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="giris.aspx.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="giris.aspx.designer.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.Master.cs">
+      <DependentUpon>index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.Master.designer.cs">
+      <DependentUpon>index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KadınGiyim.aspx.cs">
+      <DependentUpon>KadınGiyim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KadınGiyim.aspx.designer.cs">
+      <DependentUpon>KadınGiyim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kayıt.aspx.cs">
+      <DependentUpon>kayıt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kayıt.aspx.designer.cs">
+      <DependentUpon>kayıt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Komutlar.cs" />
+    <Compile Include="KızCocuk.aspx.cs">
+      <DependentUpon>KızCocuk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KızCocuk.aspx.designer.cs">
+      <DependentUpon>KızCocuk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sepet.aspx.cs">
+      <DependentUpon>sepet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sepet.aspx.designer.cs">
+      <DependentUpon>sepet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="urun_detayi.aspx.cs">
+      <DependentUpon>urun_detayi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="urun_detayi.aspx.designer.cs">
+      <DependentUpon>urun_detayi.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50933</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50933/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

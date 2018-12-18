@@ -1,0 +1,384 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="WebApplication1.index2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/prettyPhoto.css" rel="stylesheet"/>
+    <link href="css/price-range.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+  
+  
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background:#0e0e0e;">
+    <style>
+        .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: red;
+    border: 0px;
+    color: #FFFFFF;
+    cursor: default;
+    margin-right: 0;
+    margin-left: 0;
+}
+        .category-tab ul li a:hover {
+    background: red;
+    color: #fff;
+}
+
+    </style>
+    <style> 
+ 
+  
+         .badge {
+    background-color: #6394F8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+         .item button:hover {
+    background: red;
+    color:#fff;
+}
+         
+   
+     
+
+         .add-to-cart:hover {
+    background: red;
+    color: #FFFFFF;
+}
+         .control-carousel:hover {
+    color: red;
+}
+  .recommended-item-control i {
+    background: none repeat scroll 0 0 red;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 4px 10px;
+}
+
+         .get {
+    background: #808080;
+    border: 0 none;
+    border-radius: 0;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 23px;
+}
+  
+					</style>
+    <style>
+.bigicon {    
+    color:white;
+}
+
+.mix{
+    min-height:370px;
+}
+
+ul.dropdown-cart{
+    min-width:300px;
+    border: 2px solid #343434;
+    padding: 2px;
+    margin: 7px;
+    margin-top: 11px;
+}
+ul.dropdown-cart li .item{
+    display:block;
+    padding:3px 10px;
+    margin: 3px 0;
+    
+}
+
+
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;   
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+}
+ul.dropdown-cart li .item-right button{
+    margin-top:14px;
+}   
+</style>
+       <form id="form1" runat="server">
+       <nav style="margin-bottom:0px; display:block; " class="navbar navbar-inverse">
+  <div style="" class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.aspx">Anasayfa</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="ErkekGiyim.aspx">Erkek Giyim <span class="sr-only">(current)</span></a></li>
+        <li><a href="KadınGiyim.aspx">Kadın Giyim</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Çocuk <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="ErkekCocuk.aspx">Erkek Çocuk</a></li>
+            <li><a href="KızCocuk.aspx">Kız Çocuk</a></li>
+           
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <nav class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search"/>
+        </div>
+        <button type="submit" class="btn btn-default ">Ara</button>
+      </nav>
+      <ul class="nav navbar-nav navbar-right">
+          <li > <a runat="server"  hidden="hidden" id="hosgeldin" href="#">Hoşgeldin</a></li>
+           <li style="padding-right:0px; margin-right:0px;" > <a  runat="server"  hidden="hidden" id="KullanıciAdi" href="#"></a></li>
+          <li style="padding-left:0px;"><a style="padding-left:0px; margin-left:0px;" class="glyphicon glyphicon-remove" runat="server" onserverclick="cıkıs_butonu_ServerClick"  hidden="hidden" id="cıkıs_butonu" href="#"></a></li>
+        <li id="girisbutonu" runat="server"><a href="kayıt.aspx">Giriş</a></li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="Urun_sayisi_Sepet2" runat="server" class="badge">3</span><i style="padding-right:4px;" class="fa fa-shopping-cart"></i>Sepet<span class="caret"></span></a>
+          <ul style="" id="Sepet_verileri" visible="false" runat="server" class="dropdown-menu dropdown-cart" role="menu">
+
+
+
+                      <asp:Repeater   DataSourceID="SqlDataSource2" runat="server" ID="Repeater2">
+            
+    <ItemTemplate>
+              <li>
+                  <span style="" class="item">
+                    <span style="" class="item-left">
+                        <asp:LinkButton runat="server" id="incele_butonu_resim_1211" CommandArgument='<%# Eval("URUN_ID") %>' OnCommand="incele_butonu_Command">
+                        <img style="width:auto"    height="50"  src='<%# Eval("URUN_RESMI") %>' />
+                              </asp:LinkButton>
+                      
+                        <span style="" class="item-info">
+                        
+                           <span style="min-width:200px; "> <asp:Label text='<%# Eval("URUNADI") %>' runat="server" style="color:#363432; font-family:'Robonto',sans-serif;  text-align:center;"  ></asp:Label></span>  
+
+                             <span style="display:block; text-align:center;">
+                           <asp:Label style="color:red;  display:inline; width:50%; font-family: 'Roboto', sans-serif;  font-weight: 700; text-align:left;" runat="server" class="text-center"  text='<%# Eval("URUN_FIYATI") %>'></asp:Label>
+                                        
+                                        <span style="color:red; display:inline; font-family: 'Roboto', sans-serif;   font-weight: 700;">₺</span>                  
+                               </span>
+                           
+                                 
+                        </span>
+                    </span>
+                     
+
+
+
+                      
+                    <span class="item-right">
+                       <span class="item-right">
+                           <asp:LinkButton ID="LinkButton12" style="margin-top:10px;"  CssClass="btn btn-xs btn-danger pull-right" CommandArgument='<%# Eval("URUN_ID") %>' runat="server" OnCommand="LinkButton1_Command"  class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-remove"></i></asp:LinkButton>
+                              
+                       
+                    </span>
+                    </span>
+                        
+
+
+                </span>
+              </li>
+
+             </ItemTemplate>
+        
+</asp:Repeater>
+          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM temp_urunler  WHERE sepet='evet' "></asp:SqlDataSource>
+              
+          
+              <li class="divider"></li>
+              <li><asp:LinkButton runat="server" href="sepet.aspx" CssClass="text-center" >Sepetim</asp:LinkButton></li>
+          </ul>
+          <ul style="" id="Sepet_verileri_forUyeID" visible="false" runat="server" class="dropdown-menu dropdown-cart" role="menu">
+
+
+
+                      <asp:Repeater   DataSourceID="SqlDataSource1" runat="server" ID="Repeater1">
+            
+    <ItemTemplate>
+              <li>
+                  <span style="" class="item">
+                    <span style="" class="item-left">
+                        <asp:LinkButton runat="server" id="incele_butonu_resim_1211" CommandArgument='<%# Eval("URUN_ID") %>' OnCommand="incele_butonu_Command">
+                        <img style="width:auto"    height="50"  src='<%# Eval("URUN_RESMI") %>' />
+                              </asp:LinkButton>
+                      
+                        <span style="" class="item-info">
+                        
+                           <span style="min-width:200px; "> 
+                  <asp:Label text='<%# Eval("URUNADI") %>' runat="server" style="color:#363432; font-family:'Robonto',sans-serif;  text-align:center;"  ></asp:Label>
+                           </span>  
+
+                             <span style="display:block; text-align:center;">
+                           <asp:Label style="color:red;  display:inline; width:50%; font-family: 'Roboto', sans-serif;  font-weight: 700; text-align:left;" runat="server" class="text-center"  text='<%# Eval("URUN_FIYATI") %>'></asp:Label>
+                                        
+                                        <span style="color:red; display:inline; font-family: 'Roboto', sans-serif;   font-weight: 700;">₺</span>                  
+                               </span>
+                           
+                                 
+                        </span>
+                    </span>
+                     
+
+
+
+                      
+                    <span class="item-right">
+                       <span class="item-right">
+                           <asp:LinkButton ID="LinkButton12" style="margin-top:10px;"  CssClass="btn btn-xs btn-danger pull-right" CommandArgument='<%# Eval("URUN_ID") %>' runat="server" OnCommand="LinkButton1_Command"  class="btn btn-default add-to-cart"><i class="glyphicon glyphicon-remove"></i></asp:LinkButton>
+                              
+                       
+                    </span>
+                    </span>
+                        
+
+
+                </span>
+              </li>
+
+             </ItemTemplate>
+        
+</asp:Repeater>
+          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="select *from urun_satislar where sepet='evet' and sepet_kayitlari='kayitli' "></asp:SqlDataSource>
+              
+          
+              <li class="divider"></li>
+              <li><asp:LinkButton runat="server" href="sepet.aspx" CssClass="text-center" >Sepetim</asp:LinkButton></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+   
+ 
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+
+    <footer style="background:#0e0e0e;" id="footer">
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+
+                    <div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Hakkımızda</h2>
+							<span style="text-align:center" ">Türkiye'de online alışveriş denince aklınıza gelen sayılı markalardan birisi olmaktan gurur duyuyoruz! 
+                                  Türkiye'de alışverişin online adresi, en sevilen alışveriş sitesi keskebenimolsa.com.</span>
+						</div>
+					</div>
+
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Hizmetler</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Çevrimiçi Yardım</a></li>
+								<li><a href="">İletişim</a></li>
+								<li><a href="">Sipariş Durumu</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Hızlı Alışveriş</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Elektronik</a></li>
+								<li><a href="">Giyim</a></li>
+								<li><a href="">Ev ve Yaşam</a></li>
+								<li><a href="">Kişisel Bakım</a></li>
+								<li><a href="">Eğlence ve Hobi</a></li>
+							</ul>
+						</div>
+					</div>
+
+                    <div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Adres</h2>
+                            <span style="text-align:center">Gültepe Mahallesi, Zümrüt Sokak Bina No:20-22 Daire:1, 34295 Küçükçekmece/İstanbul</span>
+							
+						</div>
+					</div>
+					
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>Sizler İçin</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Mail Adresiniz" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Sitemize eklenen yeni ürünleri <br /> ilk olarak sizin görmeniz için abone olun...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2018 keskebenimolsa.com. Tüm hakları Saklıdır.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="https://www.halilaga.com">Halil GÜRER</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer>
+         <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>
